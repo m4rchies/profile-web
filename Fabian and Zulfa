@@ -1,0 +1,80 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Profil Sederhana</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f5f5f5;
+      padding: 40px;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .profile {
+      width: 160px;
+      cursor: pointer;
+    }
+    .profile img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #333;
+      transition: 0.3s;
+    }
+    .profile img:hover {
+      transform: scale(1.07);
+    }
+    .info-box {
+      margin-top: 30px;
+      background: white;
+      padding: 20px;
+      width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Profil Kami</h1>  <div class="container">
+    <div class="profile" onclick="showInfo('saya')">
+      <img src="fabian.jpg" alt="Foto Saya">
+      <p><b>Saya</b></p>
+    </div><div class="profile" onclick="showInfo('teman')">
+  <img src="zulfa.jpg" alt="Foto Teman">
+  <p><b>Teman Saya</b></p>
+</div>
+
+  </div>  <div id="info" class="info-box"></div>  <script>
+    function showInfo(person) {
+      const infoBox = document.getElementById('info');
+
+      if (person === 'saya') {
+        infoBox.innerHTML = `
+          <h2>Data Saya</h2>
+          <p>Nama: Fabian Gavriel Rasyadan</p>
+          <p>NIM: 251910201081</p>
+          <p>Prodi: Teknik Elektro</p>
+        `;
+      } else if (person === 'teman') {
+        infoBox.innerHTML = `
+          <h2>Data Teman Saya</h2>
+          <p>Nama: Zulfa Indarasyid</p>
+          <p>NIM: 251910201</p>
+          <p>Prodi: Teknik Elektro</p>
+        `;
+      }
+
+      infoBox.style.display = 'block';
+    }
+  </script></body>
+</html>
